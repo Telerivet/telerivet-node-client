@@ -2,8 +2,8 @@ Node.js client library for Telerivet REST API
 
 http://telerivet.com
 
-Overview:
----------
+Overview
+--------
 This library makes it easy to integrate your Node.js application with Telerivet.
 You can use it to:
 
@@ -19,27 +19,31 @@ All API methods are fully documented in the comments of the JS source files;
 to learn what functionality is available, start with lib/telerivet.js,
 lib/telerivet/project.js, and lib/telerivet/apicursor.js .
 
-System Requirements:
---------------------
+System Requirements
+-------------------
 Node.js 0.8 or higher
 
 Installation:
 -------------
 npm install telerivet
 
-API Overview:
--------------
+API Overview
+------------
 
 First create a telerivet.API instance with your API key as a parameter:
 
-`var tr = new telerivet.API(API_KEY);`
+```
+var tr = new telerivet.API(API_KEY);
+```
 
 In order to access most API methods, you first need to get a `Project` object:
 
-`var project = tr.getProjectById(PROJECT_ID);`
+```
+var project = tr.getProjectById(PROJECT_ID);
+```
 
-When calling getProjectById (and other get____ById methods) with only 1 argument, 
-a 'lazy' object is returned immediately, without making an API call to retrieve the 
+When calling `getProjectById` (and other `get____ById methods) with only 1 argument, 
+a "lazy" object is returned immediately, without making an API call to retrieve the 
 data for that object (e.g. project.name). 
 
 To retrieve the data you can add a callback parameter, e.g.:
@@ -80,6 +84,7 @@ cursor.each(function(err, message) {
 Example Usage:
 --------------
 
+```
 var telerivet = require('telerivet');
 
 var API_KEY = 'YOUR_API_KEY';  // from https://telerivet.com/api/keys
@@ -142,3 +147,4 @@ cursor.count(function(err, count) {
         }
     });        
 });
+```
