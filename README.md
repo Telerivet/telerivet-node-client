@@ -43,9 +43,9 @@ In order to access most API methods, you first need to get a `Project` object:
 var project = tr.getProjectById(PROJECT_ID);
 ```
 
-When calling `getProjectById` (and other `get____ById methods) with only 1 argument, 
+When calling `getProjectById` (and other `get____ById` methods) with only 1 argument, 
 a "lazy" object is returned immediately, without making an API call to retrieve the 
-data for that object (e.g. project.name). 
+data for that object (e.g. `project.name`). 
 
 To retrieve the data you can add a callback parameter, e.g.:
 
