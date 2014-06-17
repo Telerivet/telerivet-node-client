@@ -23,16 +23,17 @@ System Requirements
 -------------------
 Node.js 0.8 or higher
 
-Installation:
--------------
+Installation
+------------
 npm install telerivet
 
 API Overview
 ------------
 
-First create a telerivet.API instance with your API key as a parameter:
+First, import the telerivet module and create a `telerivet.API` instance with your API key as a parameter:
 
 ```
+var telerivet = require('telerivet');
 var tr = new telerivet.API(API_KEY);
 ```
 
@@ -81,8 +82,8 @@ cursor.each(function(err, message) {
 });
 ```
 
-Example Usage:
---------------
+Example Usage
+-------------
 
 ```
 var telerivet = require('telerivet');
