@@ -40,14 +40,14 @@ var tr = new telerivet.API(API_KEY);
 In order to access most API methods, you first need to get a `Project` object:
 
 ```
-var project = tr.getProjectById(PROJECT_ID);
+var project = tr.initProjectById(PROJECT_ID);
 ```
 
-When calling `getProjectById` (and other `get____ById` methods) with only 1 argument, 
+When calling `initProjectById` (and other `init____ById` methods)
 a "lazy" object is returned immediately, without making an API call to retrieve the 
 data for that object (e.g. `project.name`). 
 
-To retrieve the data you can add a callback parameter, e.g.:
+To retrieve the data you can call `getProjectById` instead:
 
 ```
 tr.getProjectById(PROJECT_ID, function(err, project) {
@@ -56,7 +56,17 @@ tr.getProjectById(PROJECT_ID, function(err, project) {
 });
 ```
 
-All other methods that make an API request require a final callback parameter:
+Alternatively you can call `load(callback)` after calling `initProjectById`:
+
+```
+var project = tr.initProjectById(PROJECT_ID);
+project.load(function(err, project) {
+    if (err) throw err;
+    console.log(project.name);
+});
+```
+
+All methods that make an API request require a final callback parameter:
 
 ```
 project.sendMessage({
@@ -93,7 +103,7 @@ var PROJECT_ID = 'YOUR_PROJECT_ID';
 
 var tr = new telerivet.API(API_KEY);
 
-var project = tr.getProjectById(PROJECT_ID); 
+var project = tr.initProjectById(PROJECT_ID); 
 
 // send message
 
