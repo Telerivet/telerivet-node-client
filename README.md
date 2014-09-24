@@ -1,6 +1,6 @@
 Node.js client library for Telerivet REST API
 
-http://telerivet.com
+http://telerivet.com/api
 
 Overview
 --------
@@ -15,9 +15,9 @@ You can use it to:
 - control automated services
 - much more
 
-All API methods are fully documented in the comments of the JS source files;
-to learn what functionality is available, start with lib/telerivet.js,
-lib/telerivet/project.js, and lib/telerivet/apicursor.js .
+All API methods are fully documented at https://telerivet.com/api/rest/node ,
+as well as in the comments of the JS source files. To learn what functionality is available, 
+start with lib/{telerivet.js,project.js,apicursor.js}.
 
 System Requirements
 -------------------
